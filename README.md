@@ -1,13 +1,5 @@
 ```
 //following commands are important for gradle arquillian project (in ArquillianGradleExample) : 
-// find out linux flavor (Linux Centos from RedHat) 
-cat /proc/version 
-
-// find out centos version
-cat /etc/centos-release
-
-
-//following commands are important for gradle arquillian project (in ...) : 
 //export wildfly server home 
 export JBOSS_HOME=/home/aghayevn/wildfly-13.0.0.Final
 //export gradle home 
