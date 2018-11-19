@@ -72,7 +72,8 @@ public class WorkerTest {
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class)
-                .addClasses(Worker.class, WorkerDAO.class, WorkerDAOJPAImpl.class)
+              //  .addClasses(Worker.class, WorkerDAO.class, WorkerDAOJPAImpl.class)
+                .addPackages(true, "com.edutilos")
                 .addAsResource("META-INF/persistence.xml")
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }

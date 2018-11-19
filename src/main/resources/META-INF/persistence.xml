@@ -9,22 +9,24 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
           em = Persistence.createEntityManagerFactory("worker-unit")
                     .createEntityManager();
         -->
-<!--
-        <properties>
-            <property name="hibernate.ejb.cfgfile" value="../hibernate.cfg.xml" />
-        </properties>
--->
 
+        <properties>
+            <property name="hibernate.ejb.cfgfile" value="/hibernate.cfg.xml" />
+        </properties>
+
+<!--
 <provider>org.hibernate.ejb.HibernatePersistence</provider>
 <class>com.edutilos.model.Worker</class>
 <properties>
 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
+<roperty name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
+<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 <property name="hibernate.connection.url" value="jdbc:mysql://localhost/test4?serverTimezone=UTC&amp;useSSL=false" />
 <property name="hibernate.connection.username" value="root" />
 <property name="hibernate.connection.password" value="root" />
 <property name="hibernate.hbm2ddl.auto" value="create-drop" />
 </properties>
+-->
 
 </persistence-unit>
 </persistence>

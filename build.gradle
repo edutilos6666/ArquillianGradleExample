@@ -27,15 +27,31 @@ dependencies {
     testCompile "junit:junit:${libraryVersions.junit}"
     testCompile "org.jboss.arquillian.junit:arquillian-junit-container:${libraryVersions.arquillian}"
     testCompile "org.jboss.arquillian.protocol:arquillian-protocol-servlet:${libraryVersions.arquillian}"
-    testCompile "org.wildfly.arquillian:wildfly-arquillian-container-managed:${libraryVersions.wildfly}"
+//    testCompile "org.wildfly.arquillian:wildfly-arquillian-container-managed:${libraryVersions.wildfly}"
+// https://mvnrepository.com/artifact/org.wildfly.arquillian/wildfly-arquillian-container-embedded
+// testCompile group: 'org.wildfly.arquillian', name: 'wildfly-arquillian-container-embedded', version: '2.1.0.Final'
+
+// https://mvnrepository.com/artifact/org.jboss.as/jboss-as-arquillian-container-managed
+//testCompile group: 'org.jboss.as', name: 'jboss-as-arquillian-container-embedded', version: '7.2.0.Final'
+// https://mvnrepository.com/artifact/org.jboss.spec/jboss-javaee-6.0
+// providedCompile group: 'org.jboss.spec', name: 'jboss-javaee-6.0', version: '1.0.0.Final', ext: 'pom'
+
+
+// https://mvnrepository.com/artifact/org.jboss.arquillian.container/arquillian-glassfish-embedded-3.1
+testCompile group: 'org.jboss.arquillian.container', name: 'arquillian-glassfish-embedded-3.1', version: '1.0.0.CR3'
+// https://mvnrepository.com/artifact/org.glassfish.main.extras/glassfish-embedded-all
+testCompile group: 'org.glassfish.main.extras', name: 'glassfish-embedded-all', version: '3.1.2'
+
+
+
     testCompile "org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-gradle-depchain:${libraryVersions.shrinkWrapResolverGradle}"
 
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
 providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
 // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-testCompile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
+compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.46'
 // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
-providedCompile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.4.Final' // 5.1.14.Final
+compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.4.Final' // 5.1.14.Final
 // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
 testCompile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
