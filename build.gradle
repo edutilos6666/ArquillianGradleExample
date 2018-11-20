@@ -38,11 +38,12 @@ dependencies {
 
 
 // https://mvnrepository.com/artifact/org.jboss.arquillian.container/arquillian-glassfish-embedded-3.1
-testCompile group: 'org.jboss.arquillian.container', name: 'arquillian-glassfish-embedded-3.1', version: '1.0.0.CR3'
+//testCompile group: 'org.jboss.arquillian.container', name: 'arquillian-glassfish-embedded-3.1', version: '1.0.0.CR3'
 // https://mvnrepository.com/artifact/org.glassfish.main.extras/glassfish-embedded-all
-testCompile group: 'org.glassfish.main.extras', name: 'glassfish-embedded-all', version: '3.1.2'
+//testCompile group: 'org.glassfish.main.extras', name: 'glassfish-embedded-all', version: '3.1.2'
 
 
+    testCompile group: 'org.wildfly.arquillian', name: 'wildfly-arquillian-container-managed', version: '2.1.1.Final'
 
     testCompile "org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-gradle-depchain:${libraryVersions.shrinkWrapResolverGradle}"
 
@@ -51,7 +52,7 @@ providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
 // https://mvnrepository.com/artifact/mysql/mysql-connector-java
 compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.46'
 // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
-compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.4.Final' // 5.1.14.Final
+ providedCompile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.4.Final' // 5.1.14.Final
 // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
 testCompile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12

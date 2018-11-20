@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.arquillian.example;
+package org.jboss.shrinkwrap.resolver.example;
 
 import com.edutilos.dao.WorkerDAO;
 import com.edutilos.dao.WorkerDAOJPAImpl;
@@ -25,6 +25,7 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.asset.StringAsset;
+import org.jboss.shrinkwrap.api.gradle.archive.importer.embedded.EmbeddedGradleImporter;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Assert;
@@ -71,10 +72,14 @@ public class WorkerTest {
 
     @Deployment
     public static WebArchive createDeployment() {
-        return ShrinkWrap.create(WebArchive.class)
+        return ShrinkWrap.create(EmbeddedGradleImporter.class)
+                .forThisProjectDirectory()
+                .importBuildOutput()
+                .as(WebArchive.class)
               //  .addClasses(Worker.class, WorkerDAO.class, WorkerDAOJPAImpl.class)
                 .addPackages(true, "com.edutilos")
                 .addAsResource("META-INF/persistence.xml")
+                .addAsResource("hibernate.cfg.xml")
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 
